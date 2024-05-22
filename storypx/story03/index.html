@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pay67.appstorypix.pro/path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <script src="js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+   let currentSlide = 1; 
+    $(document).ready(function() {
+        setTimeout(() => {
+            $('#progress-2').addClass('active');
+            $('#img-1').removeClass('active');
+            $('#img-2').addClass('active');
+            currentSlide = 2; 
+        }, 6000);
+
+        setTimeout(() => {
+            currentSlide = 3; 
+            $('#progress-3').addClass('active');
+            $('#img-2').removeClass('active');
+            $('#img-3').addClass('active');
+        }, 12000);
+
+        setTimeout(() => {
+            window.location.href= '../story04/index.html'
+        }, 18000);
+
+
+$('.stories').click(function() {
+    if (currentSlide == 1) {
+
+    $(`#progress-${currentSlide}`).removeClass('active').addClass('next')
+    $(`#progress-${currentSlide + 1}`).addClass('active');
+    $(`#img-${currentSlide}`).removeClass('active');
+    $(`#img-${currentSlide + 1}`).addClass('active');
+
+    } else if (currentSlide == 2) {
+    $(`#progress-${currentSlide}`).removeClass('active').addClass('next')
+      $(`#progress-${currentSlide + 1}`).addClass('active');
+    $(`#img-${currentSlide}`).removeClass('active');
+    $(`#img-${currentSlide + 1}`).addClass('active');
+    } else {
+      window.location.href= '../story04/index.html'
+
+    }
+
+    currentSlide++;
+});
+    })
+  </script></head>
+  
+  <body style="background-color: black;"><audio id="audio" src="media/cash.mp3"></audio>
+
+  
+    <div class="header">
+        <div class="d-flex" style="justify-content: space-between;">
+            <div class="progress progress-striped " style="width: 33%;">
+                <div class="progress-bar active" id="progress-1">
+                </div>                       
+              </div> 
+              <div class="progress progress-striped" style="width: 33%;">
+                <div class="progress-bar" id="progress-2">
+                </div>                       
+              </div> 
+              <div class="progress progress-striped" style="width: 33%;">
+                <div class="progress-bar" id="progress-3">
+                </div>                       
+              </div> 
+        </div>
+        <div class="d-flex" style="justify-content: space-between; align-items: center; padding: 0px 5px;">
+            <div class="profile">
+                <img src="images/anitta.png" alt="">
+                <div class="d-flex" style="flex-direction: column;">
+                    <span>anitta</span>
+                    <img src="images/7641727.png" style="width: 13px; height: 13px;" alt="">
+                </div>
+            </div>
+            <div class="time">
+                <span>15 minutos</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stories">
+        <img id="img-1" class="active" src="images/anitta1.jpeg" alt="">
+        <img id="img-2" src="images/anitta4.jpeg" alt="">
+        <img id="img-3" src="images/anitta5.jpg" alt="">
+        
+    </div>
+  
+  
+  <script src="js/script.js"></script>
+</body></html>

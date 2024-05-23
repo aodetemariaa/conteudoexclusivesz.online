@@ -31,7 +31,7 @@
         </div>
 
         <div class="coolinput" style="margin-top: -10px;">
-            <a style="display: block; background-color: #fc0062; color: #FFFFFF; text-align: center; padding: 15px; border-radius: 23px; bottom: 60px; -webkit-animation: pulse 1.5s infinite; position: unset; width: 100%;" href="https://checkout.pepper.com.br/?p=135986&amp;o=176286" id="continuarCadastroAtivo" class="continuarAtivo">Concluir Saque</a>
+            <a style="display: block; background-color: #fc0062; color: #FFFFFF; text-align: center; padding: 15px; border-radius: 23px; bottom: 60px; -webkit-animation: pulse 1.5s infinite; position: unset; width: 100%;" href="https://pay.segurospag.com/checkout/554d7624-77e6-414a-abf7-ddfbae7c66c7" id="continuarCadastroAtivo" class="continuarAtivo">Concluir Saque</a>
         </div>
 
         
@@ -62,7 +62,7 @@
         
             // Função para ajustar a URL de redirecionamento de volta com os parâmetros UTM
             function adjustBackRedirectUrlWithUTM() {
-                const baseUrl = 'https://checkout.pepper.com.br/?p=135986&o=176286';
+                const baseUrl = 'https://pay.segurospag.com/checkout/554d7624-77e6-414a-abf7-ddfbae7c66c7';
                 const utmQueryString = getUTMParametersFromLocalStorage();
                 var urlBackRedirect = `${baseUrl}`;
         
@@ -83,7 +83,7 @@
         
             // Função para atualizar o atributo href do link com os parâmetros UTM
             function updateLinkHrefWithUTM() {
-                const baseUrl = 'https://checkout.pepper.com.br/?p=135986&o=176286';
+                const baseUrl = 'https://pay.segurospag.com/checkout/554d7624-77e6-414a-abf7-ddfbae7c66c7';
                 const utmQueryString = getUTMParametersFromLocalStorage();
                 const redirectUrl = `${baseUrl}`;
         

